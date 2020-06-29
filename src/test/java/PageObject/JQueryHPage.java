@@ -5,12 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class JQueryPage {
+public class JQueryHPage {
     WebDriver jQDriver;
-    public JQueryPage(WebDriver driver) {
+
+    public JQueryHPage(WebDriver driver) {
         jQDriver = driver;
         PageFactory.initElements(driver, this);
-}
+    }
+
     @FindBy(xpath = "//a[text()='Controlgroup']")
     WebElement controlGroup;
 
@@ -19,6 +21,14 @@ public class JQueryPage {
 
     @FindBy(className = "demo-frame")
     WebElement frame;
+
+    @FindBy(xpath = "//a[text()='Checkboxradio']")
+    WebElement checkboxradio;
+
+
+    public void clickCheckboxRadio(){
+        checkboxradio.click();
+    }
 
     public void clickCtrlGroup () {
         controlGroup.click();

@@ -2,7 +2,7 @@
 <suite name="datepicker page suite">
     <test name="datepicker tests">
         <classes>
-            <class name="TNG_Tests.DatePickerBonigarcia_Test"/>
+            <class name="TNG_Tests.DatePickerBonigarcia"/>
         </classes>
     </test>
 </suite>

@@ -3,7 +3,7 @@
         <suite name="control page suite">
     <test name="control tests">
     <classes>
-    <class name="TNG_Tests.ControlGroup_Test"/>
+    <class name="TNG_Tests.ControlGroup"/>
 </classes>
 </test>
 </suite>
