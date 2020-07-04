@@ -31,6 +31,13 @@ public class Hooks {
     @After
     public void tearDown(Scenario scenario) {
         driver.quit();
+        scenario.log("getID:"+scenario.getId());
+        scenario.log("getName:"+scenario.getName());
+        scenario.log("getine:"+scenario.getLine());
+        scenario.log("getTagName:"+scenario.getSourceTagNames());
+        scenario.log("getID:"+scenario.getUri());
+        scenario.log("getID:"+scenario.getStatus());
+        scenario.log("getID:"+scenario.isFailed());
         System.out.println("inside @After Hook");
     }
 }
