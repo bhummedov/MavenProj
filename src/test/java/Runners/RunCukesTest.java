@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src\\test\\features", //location of the features file folder
         glue = {"stepDefs"}, //location of the step definition classes
         //tags = "@multiparams or @doublequoteparams or @doublequoteparam1 or @wordparam", //to run multiple tags
-        //tags = " @hotelStars",
+        //tags = "@radiosselection",
         plugin = {"pretty","html:target/cucumber.html", "json:target/cucumber.json"}
 )
 public class RunCukesTest {

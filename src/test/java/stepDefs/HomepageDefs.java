@@ -1,7 +1,7 @@
 package stepDefs;
 import io.cucumber.java.en.*;
 import managers.DriverMgr;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import PageObject.DatepickerPage;
 import PageObject.JQueryHPage;
@@ -23,7 +23,7 @@ public class HomepageDefs {
         datepickerPage = new DatepickerPage(driver);
         //  driver.manage().window().maximize(); --> moved to @Before hook
         //  driver.get(baseUrl); --> moved to @Before hook
-        Assert.assertEquals("failed", "https://jqueryui.com/", driver.getCurrentUrl());
+        Assertions.assertEquals("https://jqueryui.com/", driver.getCurrentUrl());
     }
 
     @When("I click on controlgroup")
@@ -37,7 +37,7 @@ public class HomepageDefs {
     public void i_land_on_the_controlgroup_page() {
         // Write code here that turns the phrase above into concrete actions
         System.out.println("inside then");
-        Assert.assertEquals("failed", "https://jqueryui.com/controlgroup/", driver.getCurrentUrl());
+        Assertions.assertEquals("https://jqueryui.com/controlgroup/", driver.getCurrentUrl());
     }
 
     @When("I click on datepicker")
@@ -62,8 +62,7 @@ public class HomepageDefs {
     @But("I land on the checkboxradio page")
     public void i_land_checkboxradio_page() {
         System.out.println("inside checkbox radio landing page");
-        //to make sure to land correct page we use "Assertion"
-        Assert.assertEquals("failed", "https://jqueryui.com/checkboxradio/", driver.getCurrentUrl());
+        Assertions.assertEquals("https://jqueryui.com/checkboxradio/", driver.getCurrentUrl());
     }
 
     @And("I switch to demo-frame")

@@ -1,5 +1,6 @@
-@checkboxradio
+@checkboxradiopico
 Feature: pass data from one step to another
+
   @radiosselectionpico
   Scenario: perform radio button selection
     Given I am on the jquery homepage

@@ -14,7 +14,7 @@ public class CheckBoxRadioPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = ".ui-checkboxradio-radio-label>span.ui-checkboxradio-icon") // previous way to get counts
+    @FindBy(css = ".ui-checkboxradio-radio-label>span.ui-checkboxradio-icon") //to get counts
             List<WebElement> allRadios;
 
     @FindBy(xpath = "//legend[text()='Hotel Ratings: ']/following-sibling::label[contains(@for,'checkbox')]/span[1]")
@@ -23,14 +23,8 @@ public class CheckBoxRadioPage {
     @FindBy(xpath = "//legend[text()='Bed Type: ']/following-sibling::label[contains(@for,'checkbox')]/span[1]")
     List<WebElement> allBedTypes;
 
-    @FindBy(css = ".ui-checkboxradio-radio-label") //--> new way selects general select button and then you can choose your desired button form there
+    @FindBy(css = ".ui-checkboxradio-radio-label") // new locator to find elements and click
             List<WebElement> allRadios1;
-
-    @FindBy(xpath = "//legend[text()='Hotel Ratings: ']/following-sibling::label[contains(@for,'checkbox')]")//--> new way selects general select button and then you can choose your desired button form there
-            List<WebElement> allRatings1;
-
-    @FindBy(xpath = "//legend[text()='Bed Type: ']/following-sibling::label[contains(@for,'checkbox')]")//--> new way selects general select button and then you can choose your desired button form there
-            List<WebElement> allBedTypes1;
 
     public int elementSize(String type) {
         int size = 0;
@@ -50,8 +44,8 @@ public class CheckBoxRadioPage {
 
     public boolean selectRadio(String city) throws InterruptedException {
         boolean isRadioSelected = false;
-        for (WebElement eachRadio : allRadios1) {
-            if (eachRadio.getText().equals(city)) {
+        for (WebElement eachRadio: allRadios1) {
+            if(eachRadio.getText().equals(city)) {
                 eachRadio.click();
                 Thread.sleep(5000);
                 isRadioSelected = eachRadio.findElement(By.xpath("following-sibling::input[1]")).isSelected();
@@ -60,30 +54,7 @@ public class CheckBoxRadioPage {
         }
         return isRadioSelected;
     }
-    public boolean selectRatings(String city) throws InterruptedException {
-        boolean isRatingsSelected = false;
-        for (WebElement eachRating: allRatings1) {
-            if(eachRating.getText().equals(city)) {
-                eachRating.click();
-                Thread.sleep(5000);
-                isRatingsSelected = eachRating.findElement(By.xpath("following-sibling::input[1]")).isSelected();
-                break;
-            }
-        }
-        return isRatingsSelected;
-    }
-    public boolean selectBedTypes(String city) throws InterruptedException {
-        boolean isBedTypes = false;
-        for (WebElement eachBedTypes : allBedTypes1) {
-            if (eachBedTypes.getText().equals(city)) {
-                eachBedTypes.click();
-                Thread.sleep(5000);
-                isBedTypes = eachBedTypes.findElement(By.xpath("//*[@type=\"checkbox\"]")).isSelected();
-                break;
-            }
-        }
-        return isBedTypes;
-    }
+
     public void selectRadioOnly(String city) throws InterruptedException {
         for (WebElement eachRadio: allRadios1) {
             if(eachRadio.getText().equals(city)) {
@@ -92,6 +63,7 @@ public class CheckBoxRadioPage {
             }
         }
     }
+
     public boolean validateSelection(String button) throws InterruptedException {
         boolean isRadioSelected = false;
         for (WebElement eachRadio: allRadios1) {
@@ -102,4 +74,36 @@ public class CheckBoxRadioPage {
         }
         return isRadioSelected;
     }
+
 }
+//    @FindBy(xpath = "//legend[text()='Hotel Ratings: ']/following-sibling::label[contains(@for,'checkbox')]")//--> new way selects general select button and then you can choose your desired button form there
+//            List<WebElement> allRatings1;
+//
+//    @FindBy(xpath = "//legend[text()='Bed Type: ']/following-sibling::label[contains(@for,'checkbox')]")//--> new way selects general select button and then you can choose your desired button form there
+//            List<WebElement> allBedTypes1;
+
+//    public boolean selectRatings(String city) throws InterruptedException {
+//        boolean isRatingsSelected = false;
+//        for (WebElement eachRating: allRatings1) {
+//            if(eachRating.getText().equals(city)) {
+//                eachRating.click();
+//                Thread.sleep(5000);
+//                isRatingsSelected = eachRating.findElement(By.xpath("following-sibling::input[1]")).isSelected();
+//                break;
+//            }
+//        }
+//        return isRatingsSelected;
+//    }
+//    public boolean selectBedTypes(String city) throws InterruptedException {
+//        boolean isBedTypes = false;
+//        for (WebElement eachBedTypes : allBedTypes1) {
+//            if (eachBedTypes.getText().equals(city)) {
+//                eachBedTypes.click();
+//                Thread.sleep(5000);
+//                isBedTypes = eachBedTypes.findElement(By.xpath("//*[@type=\"checkbox\"]")).isSelected();
+//                break;
+//            }
+//        }
+//        return isBedTypes;
+//    }
+
