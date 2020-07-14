@@ -11,6 +11,7 @@ Feature: Checkboxradio page tests
     Then I validate number of ratings is 4
     Then I validate number of bedTypes is 4
 
+
   @radiosselection @checkb
   Scenario: perform radio button selection
     Given I am on the jquery homepage
